@@ -1,15 +1,63 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/></head><body>
-<title>数式記述パレット</title>
-<center><p style="font-size:50px">数式記述ツール</p></center>
-<div style="padding:0px 50px 0px 0px;"><div style="padding:0px 60px;">
-<textarea id="text" style="width:100%; height:150px; font-size:60px;"></textarea></div>
+<title>表現可能数式パレット</title>
+<body style="background:#FCFAFE">
+<font face="sans-serif"><div style="padding:30px"><font style="color:gray; font-size:25px">
+啓倫社普通ツール / 数学 / 表現可能数式パレット</font><br>
+<br><font style="font-size:55px"><b>表現可能数式パレット</b></font><br>
+<font style="font-size:32px">入力された数式コマンドを、Unicode15.0で表現可能な数式として出力します。合成可能ダイアクリティカルマークを使用するため、一部の環境では適用されない場合があります。
+</font><br><br>
+<input class="ib" type="button" value=" \ " onclick="add1()">
+<input class="ib" type="button" value="^" onclick="add2()">
+<input class="ib" type="button" value="_" onclick="add3()">
+<input class="ib" type="button" value="$" onclick="add4()">
+<input class="ib" type="button" value="€" onclick="add5()">
+<input class="ib" type="button" value="£" onclick="add6()">
+<br><br>
 
-<div style="padding:70px; ">
-<div id="showarea" style="font-size:70px;"></div>
-<textarea id="target" style="width:100%; height:150px; font-size:60px;"></textarea>
+<textarea placeholder="x^2" id="text" style="width:100%; height:250px; font-size:60px;"></textarea>
+
+<div id="showarea" style="font-size:70px;"></div><br>
+<textarea placeholder="x²" id="target" style="width:100%; height:250px; font-size:60px;"></textarea>
+<br><br>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="表現可能数式パレット - 啓倫社普通ツール" data-url="https://keirinsha.github.io/tools/math.html" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-</div>
+<style>
+.ib{
+font-size:35px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+</style>
+<script type="text/javascript">
+ function add1(){
+ document.getElementById('text').value+='\\';}
+ function add2(){
+ document.getElementById('text').value+='^';}
+ function add3(){
+ document.getElementById('text').value+='_';}
+  function add4(){
+ document.getElementById('text').value+='$';}
+  function add5(){
+ document.getElementById('text').value+='€';}
+  function add6(){
+ document.getElementById('text').value+='£';}
+ </script>
 
 <script>//inputで入力して値の表示
 function showMsg(event) {
@@ -851,4 +899,11 @@ showarea.innerHTML = "";
 //'input' イベントが発生したとき showMsgを起動させる。
 //'input' を 'change'に変えると Enter押下で showMsgを起動させることができる。
 document.getElementById('text').addEventListener('input', showMsg);
-</script></body></html>
+</script>
+
+
+
+ 
+ 
+ 
+</body></html>
