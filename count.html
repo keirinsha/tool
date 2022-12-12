@@ -1,0 +1,104 @@
+<title>文字数カウント - 啓倫社</title>
+<body style="background:#FCFAFE">
+<font face="sans-serif"><div style="padding:30px"><font style="color:gray; font-size:25px">
+啓倫社普通ツール / 文字列操作 / 文字数カウント</font><br>
+<br><font style="font-size:55px"><b>文字数カウント</b></font><br>
+<font style="font-size:32px">入力された文字列の文字数をカウントします。
+</font><br><br>
+
+
+<textarea placeholder="文字列を入力してカウント" id="text" style="width:100%; height:250px; font-size:40px;"></textarea>
+
+<div id="showarea" style="font-size:40px;"></div><br>
+<textarea placeholder="文字数（空白考慮）" id="target1" style="width:100%; height:60px; font-size:40px;"></textarea><br><br>
+<textarea placeholder="文字数（空白無視）" id="target2" style="width:100%; height:60px; font-size:40px;"></textarea><br><br>
+<textarea placeholder="行数" id="target3" style="width:100%; height:60px; font-size:40px;"></textarea>
+<br><br><br><br>
+<hr><br><br><br>
+
+
+<style>
+.ib{
+font-size:35px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size:30px
+}
+
+table th,table td{
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd){
+  background-color: #fafafa
+}
+</style>
+<script type="text/javascript">
+ function add1(){
+ document.getElementById('text').value+='\\';}
+ function add2(){
+ document.getElementById('text').value+='^';}
+ function add3(){
+ document.getElementById('text').value+='_';}
+  function add4(){
+ document.getElementById('text').value+='$';}
+  function add5(){
+ document.getElementById('text').value+='€';}
+  function add6(){
+ document.getElementById('text').value+='£';}
+ 
+
+ </script>
+
+<script>//inputで入力して値の表示
+function showMsg(event) {
+const s = document.getElementById("text");
+const value = s.value;
+const result1 = value.length;
+const result2 =value.replace(/\n/g,"").replace(/ /g,"").length;
+n =  value.match(/\n/g);
+if (n) result3 = n.length + 1; else result3 = 1;
+
+document.getElementById( "target1" ).value = result1 ;
+document.getElementById( "target2" ).value = result2 ;
+document.getElementById( "target3" ).value = result3 ;
+
+}
+//inputのクリア
+document.getElementById('text').value="";
+//表示領域のクリア
+showarea.innerHTML = "";
+//'input' イベントが発生したとき showMsgを起動させる。
+//'input' を 'change'に変えると Enter押下で showMsgを起動させることができる。
+document.getElementById('text').addEventListener('input', showMsg);
+</script>
+<br><br>
+<div style="text-align:right; color:gray">
+ <img width="25%" src="https://keirinsha.github.io/tools/ktools.PNG"><br>
+ © 2020 Keirinsha &nbsp;
+ </div>
+ 
+</body></html>
