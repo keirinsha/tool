@@ -7,12 +7,20 @@
 </font><br><br>
 
 
-<textarea placeholder="文字列を入力してカウント" id="text" style="width:100%; height:250px; font-size:40px;"></textarea>
+<textarea placeholder="文字列を入力してカウント" id="text" style="width:100%; height:250px; font-size:40px;"></textarea><br><br>
+
+<input type="button" value="クリア" onclick="clearTextarea()" style="font-size:30px; background:#f0f0f0; color:#666; border:1px solid #aaa;" />
+
 
 <div id="showarea" style="font-size:40px;"></div><br>
-<textarea placeholder="文字数（空白考慮）" id="target1" style="width:100%; height:60px; font-size:40px;"></textarea><br><br>
-<textarea placeholder="文字数（空白無視）" id="target2" style="width:100%; height:60px; font-size:40px;"></textarea><br><br>
-<textarea placeholder="行数" id="target3" style="width:100%; height:60px; font-size:40px;"></textarea>
+<table><tr><td width="35%" style="text-align:left; font-size:35px">文字数（空白考慮）</td><td>
+<textarea placeholder="0" id="target1" style="width:100%; height:60px; font-size:40px;"></textarea>
+</td></tr></table>
+<br>
+<table><tr><td width="35%" style="text-align:left;font-size:35px">文字数（空白無視）</td><td>
+<textarea placeholder="0" id="target2" style="width:100%; height:60px; font-size:40px;"></textarea></td></tr></table><br>
+<table><tr><td width="35%" style="text-align:left;font-size:35px">行数</td><td>
+<textarea placeholder="0" id="target3" style="width:100%; height:60px; font-size:45px;"></textarea></td></tr></table></div>
 <br><br><br><br>
 <hr><br><br><br>
 
@@ -73,9 +81,16 @@ table tr:nth-child(odd){
 
  </script>
 
-<script>//inputで入力して値の表示
+<script>
+function clearTextarea() {
+	var textareaForm = document.getElementById("text");
+  textareaForm.value = '';
+}
+//inputで入力して値の表示
 function showMsg(event) {
 const s = document.getElementById("text");
+
+
 const value = s.value;
 const result1 = value.length;
 const result2 =value.replace(/\n/g,"").replace(/ /g,"").length;
