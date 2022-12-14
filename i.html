@@ -5,7 +5,7 @@
 <br><font style="font-size:55px"><b>斜体変換</b></font><br>
 <font style="font-size:32px">入力された文字列を斜体で出力します。
 </font><br><br>
-<input class="ib" type="button" value="改行" onclick="add1()"><br>
+<input class="ib" type="button" value="改行" onclick="add1()"> <input class="ib" type="button" value="縮小" onclick="add2()"><br>
 
 
 <br>
@@ -64,7 +64,9 @@ table tr:nth-child(odd){
 </style>
 <script type="text/javascript">
  function add1(){
- document.getElementById('text').value+='<br>';}
+ document.getElementById('text').value+='\\';}
+ function add2(){
+ document.getElementById('text').value+='\*';}
  
 
  </script>
@@ -72,7 +74,7 @@ table tr:nth-child(odd){
 <script>//inputで入力して値の表示
 function showMsg(event) {
 const s = document.getElementById("text");
-const value = s.value;
+const value = s.value.replace(/\\/g,"<br>").replace(/\*/g,"<font size=\"3\">");
 showarea.innerHTML = value;
 }
 //inputのクリア
