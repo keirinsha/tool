@@ -1,0 +1,11 @@
+<!DOCTYPE html><htm1><head><meta charset="UTF-8"></head><body><input type="date"id="date"onchange="calc()"><input id="add"value="0"onchange="calc()"><script>function calc(){
+ let dv = document.getElementById("date").value;
+ let dd = dv.split("-");
+ let dset = new Date(dd[0], dd[1], dd[2] ); 
+
+ let av = Number( document.getElementById("add").value );
+ let out = new Date();
+ out.setTime( dset.getTime() + av * 24 * 3600000 );
+ alert( out ); 
+ }
+</script></body ></html >
