@@ -1,0 +1,95 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+<title>普通任意進数変換 - 啓倫社</title>
+<body style="background:#FCFAFE">
+<font face="sans-serif"><div style="padding:30px"><a href="https://keirinsha.github.io/tools" style="color:gray; text-decoration:none">啓倫社簡易ツール</a><span style="color:gray"> / 文字列操作 / 普通任意進数変換</span><br>
+<br><font style="font-size:55px"><b>普通任意進数変換</b></font><br>
+<font style="font-size:32px">入力された文字列から任意の文字列を検索し、任意の文字列に置換して出力します。</font>
+
+
+
+
+
+<br><br>
+<textarea placeholder="入力" id="text" oninput="showMsg()" style="width:100%; height:250px; font-size:40px;"></textarea>
+<br><br>
+<span style="font-size:30px; background:#eee; padding:6px 15px; border-radius:10px">変換先</span>  &nbsp;10進数をn進数に変換します。なお、nは2以上36以下です。
+<div style="padding:4px"></div>
+
+<div style="display:flex;">
+<div style="font-size:40px; text-align:middle; ">10進数</div><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="in1"oninput="showMsg()" style="font-size:40px; width:15%; height:60px"></textarea><div style="font-size:40px; text-align:middle; ">&nbsp;進数</div></div>
+
+<br>
+<textarea placeholder="出力" id="result" style="width:100%; height:250px; font-size:40px;"></textarea>
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+<style>
+.ib{
+font-size:35px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size:30px
+}
+
+table th,table td{
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd){
+  background-color: #fafafa
+}
+</style>
+
+
+<script>function showMsg() {
+ const s = document.getElementById("text");
+ const in1 = document.getElementById("in1");
+ let inv =Number( in1.value );
+ let value = Number(s.value);
+ 
+ let result = value.toString(inv) ;
+ document.getElementById( "result").value = result ;
+ }
+</script>
+<br><br>
+<div style="text-align:right; color:gray">
+ <img width="25%" src="https://keirinsha.github.io/tools/nnl.PNG"><br>
+  <span style="font-size:20px">© 2020 Keirinsha &nbsp;
+ </div>
+ 
+</body></html>
