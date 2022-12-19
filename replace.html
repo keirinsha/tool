@@ -1,4 +1,10 @@
-<title>文字列置換 - 啓倫社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+<title>表現可能数式パレット - 啓倫社</title>
 <body style="background:#FCFAFE">
 <font face="sans-serif"><div style="padding:30px"><font style="color:gray; font-size:25px">
 啓倫社普通ツール / 文字列操作 / 文字列置換</font><br>
@@ -9,13 +15,15 @@
 
 <br><br>
 
-<textarea id="in1"oninput="showMsg()">置換したものを</textarea>
+<textarea id="in1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">
+chevron_right
+</span>
 
-<textarea id="out1"oninput="showMsg()">置換して</textarea>
+<textarea id="out1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
 <br><br>
-<textarea id="text" oninput="showMsg()" style="width:100%; height:250px; font-size:60px;">in1とout1を置換したものをresultに出力</textarea>
+<textarea placeholder="入力" id="text" oninput="showMsg()" style="width:100%; height:250px; font-size:60px;"></textarea>
 <br>
-<textarea id="result" style="width:100%; height:250px; font-size:60px;">result</textarea>
+<textarea placeholder="出力" id="result" style="width:100%; height:250px; font-size:60px;">result</textarea>
 
 
 
