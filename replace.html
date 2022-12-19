@@ -4,26 +4,43 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-<title>表現可能数式パレット - 啓倫社</title>
+<title>文字列置換 - 啓倫社</title>
 <body style="background:#FCFAFE">
 <font face="sans-serif"><div style="padding:30px"><font style="color:gray; font-size:25px">
 啓倫社普通ツール / 文字列操作 / 文字列置換</font><br>
 <br><font style="font-size:55px"><b>文字列置換</b></font><br>
-<font style="font-size:32px">入力された文字列から任意の文字列を検索し、任意の文字列に置換して出力します。
-</font><br><br>
+<font style="font-size:32px">入力された文字列から任意の文字列を検索し、任意の文字列に置換して出力します。</font>
+
+
+
 
 
 <br><br>
-
-<textarea id="in1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">
-chevron_right
-</span>
-
-<textarea id="out1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
+<textarea placeholder="入力" id="text" oninput="showMsg()" style="width:100%; height:450px; font-size:40px;"></textarea>
 <br><br>
-<textarea placeholder="入力" id="text" oninput="showMsg()" style="width:100%; height:250px; font-size:60px;"></textarea>
+<span style="font-size:30px; background:#eee; padding:6px 15px; border-radius:10px">置換規則</span>  &nbsp;空白改行は、inputに対して空白改行を入力します。
+<div style="padding:4px"></div>
+<table>
+<tr>
+<td style="text-align:left">
+<textarea id="in1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="out1"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
+</td>
+<td>
+<textarea id="in2"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="out2"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<textarea id="in3"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="out3"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
+</td>
+<td>
+<textarea id="in4"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="out4"oninput="showMsg()" style="font-size:40px; width:40%; height:60px"></textarea>
+</td>
+</tr>
+
+</table>
 <br>
-<textarea placeholder="出力" id="result" style="width:100%; height:250px; font-size:60px;"></textarea>
+<textarea placeholder="出力" id="result" style="width:100%; height:450px; font-size:40px;"></textarea>
 
 
 
@@ -78,19 +95,29 @@ table tr:nth-child(odd){
 <script>function showMsg() {
  const s = document.getElementById("text");
 
- const in1 = document.getElementById("in1");
+ const in1 = document.getElementById("in1"); const in2 = document.getElementById("in2");
+  const in3 = document.getElementById("in3"); const in4 = document.getElementById("in4");
  let in1v =in1.value;
+ let in2v =in2.value;
+ let in3v =in3.value;
+ let in4v =in4.value;
  const out1 = document.getElementById("out1");
+ const out2 = document.getElementById("out2");
+  const out3 = document.getElementById("out3");
+ const out4 = document.getElementById("out4");
  let out1v =out1.value;
+  let out2v =out2.value;
+  let out3v =out3.value;
+  let out4v =out4.value;
  
  let value = s.value;
- let result = value.replace(in1v,out1v);
+ let result = value.replace(in1v,out1v).replace(in2v,out2v).replace(in3v,out3v).replace(in4v,out4v);
  document.getElementById( "result").value = result ;
  }
 </script>
 <br><br>
 <div style="text-align:right; color:gray">
- <img width="25%" src="https://keirinsha.github.io/tools/ktools.PNG"><br>
+ <img width="25%" src="https://keirinsha.github.io/tools/nnl.PNG"><br>
  © 2020 Keirinsha &nbsp;
  </div>
  
