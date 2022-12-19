@@ -1,0 +1,153 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+<title>拡張任意進数変換 - 啓倫社</title>
+<body style="background:#FCFAFE">
+<font face="sans-serif"><div style="padding:30px"><a href="https://keirinsha.github.io/tools" style="color:gray; text-decoration:none">啓倫社簡易ツール</a><span style="color:gray"> / 文字列操作 / 拡張任意進数変換</span><br>
+<br><font style="font-size:55px"><b>拡張任意進数変換</b></font><br>
+<font style="font-size:32px">入力された数値を2以上62以下の任意の進数へ変換します。</font>
+
+
+
+
+
+<br><br>
+<textarea placeholder="入力" id="text" oninput="showMsg()" style="width:100%; height:250px; font-size:40px;"></textarea>
+<br><br>
+<span style="font-size:30px; background:#eee; padding:6px 15px; border-radius:10px">変換先</span>  &nbsp;10進数をn進数に変換します。なお、nは2以上62以下です。
+<div style="padding:4px"></div>
+
+<div style="display:flex;">
+<div style="font-size:40px; text-align:middle; ">10進数</div><span class="material-icons-outlined" style="font-size:60px; color:gray">chevron_right</span><textarea id="in1"oninput="showMsg()" style="font-size:40px; width:15%; height:60px"></textarea><div style="font-size:40px; text-align:middle; ">&nbsp;進数</div></div>
+
+<br>
+<textarea placeholder="出力" id="result" style="width:100%; height:250px; font-size:40px;"></textarea>
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+<style>
+.ib{
+font-size:35px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size:30px
+}
+
+table th,table td{
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd){
+  background-color: #fafafa
+}
+</style>
+
+
+<script>function showMsg() {
+ const s = document.getElementById("text");
+ const in1 = document.getElementById("in1");
+ let inv =Number( in1.value );
+ let value = Number(s.value);
+
+function convertToBase37(num) {var base37= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzA';while (num > 0) {base37= chars[num % 37] + base37;num = Math.floor(num /37); } return base37;}
+function convertToBase38(num) {var base38= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzAB';while (num > 0) {base38= chars[num % 38] + base38;num = Math.floor(num /38); } return base38;}
+function convertToBase39(num) {var base39= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABC';while (num > 0) {base39= chars[num % 39] + base39;num = Math.floor(num /39); } return base39;}
+function convertToBase40(num) {var base40= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCD';while (num > 0) {base40= chars[num % 40] + base40;num = Math.floor(num /40); } return base40;}
+function convertToBase41(num) {var base41= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDE';while (num > 0) {base41= chars[num % 41] + base41;num = Math.floor(num /41); } return base41;}
+function convertToBase42(num) {var base42= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEF';while (num > 0) {base42= chars[num % 42] + base42;num = Math.floor(num /42); } return base42;}
+function convertToBase43(num) {var base43= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFG';while (num > 0) {base43= chars[num % 43] + base43;num = Math.floor(num /43); } return base43;}
+function convertToBase44(num) {var base44= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGH';while (num > 0) {base44= chars[num % 44] + base44;num = Math.floor(num /44); } return base44;}
+function convertToBase45(num) {var base45= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHI';while (num > 0) {base45= chars[num % 45] + base45;num = Math.floor(num /45); } return base45;}
+function convertToBase46(num) {var base46= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJ';while (num > 0) {base46= chars[num % 46] + base46;num = Math.floor(num /46); } return base46;}
+function convertToBase47(num) {var base47= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJK';while (num > 0) {base47= chars[num % 47] + base47;num = Math.floor(num /47); } return base47;}
+function convertToBase48(num) {var base48= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKL';while (num > 0) {base48= chars[num % 48] + base48;num = Math.floor(num /48); } return base48;}
+function convertToBase49(num) {var base49= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLM';while (num > 0) {base49= chars[num % 49] + base49;num = Math.floor(num /49); } return base49;}
+function convertToBase50(num) {var base50= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN';while (num > 0) {base50= chars[num % 50] + base50;num = Math.floor(num /50); } return base50;}
+function convertToBase51(num) {var base51= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNO';while (num > 0) {base51= chars[num % 51] + base51;num = Math.floor(num /51); } return base51;}
+function convertToBase52(num) {var base52= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP';while (num > 0) {base52= chars[num % 52] + base52;num = Math.floor(num /52); } return base52;}
+function convertToBase53(num) {var base53= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ';while (num > 0) {base53= chars[num % 53] + base53;num = Math.floor(num /53); } return base53;}
+function convertToBase54(num) {var base54= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQR';while (num > 0) {base54= chars[num % 54] + base54;num = Math.floor(num /54); } return base54;}
+function convertToBase55(num) {var base55= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS';while (num > 0) {base55= chars[num % 55] + base55;num = Math.floor(num /55); } return base55;}
+function convertToBase56(num) {var base56= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST';while (num > 0) {base56= chars[num % 56] + base56;num = Math.floor(num /56); } return base56;}
+function convertToBase57(num) {var base57= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTU';while (num > 0) {base57= chars[num % 57] + base57;num = Math.floor(num /57); } return base57;}
+function convertToBase58(num) {var base58= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV';while (num > 0) {base58= chars[num % 58] + base58;num = Math.floor(num /58); } return base58;}
+function convertToBase59(num) {var base59= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVW';while (num > 0) {base59= chars[num % 59] + base59;num = Math.floor(num /59); } return base59;}
+function convertToBase60(num) {var base60= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';while (num > 0) {base60= chars[num % 60] + base60;num = Math.floor(num /60); } return base60;}
+function convertToBase61(num) {var base61= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY';while (num > 0) {base61= chars[num % 61] + base61;num = Math.floor(num /61); } return base61;}
+function convertToBase62(num) {var base62= '';var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';while (num > 0) {base62= chars[num % 62] + base62;num = Math.floor(num /62); } return base62;}
+ 
+ if (2 <= inv && inv <= 36) result = value.toString(inv) ; 
+ 
+ 
+ 
+if (inv ==37) result = convertToBase37(value) ;
+if (inv ==38) result = convertToBase38(value) ;
+if (inv ==39) result = convertToBase39(value) ;
+if (inv ==40) result = convertToBase40(value) ;
+if (inv ==41) result = convertToBase41(value) ;
+if (inv ==42) result = convertToBase42(value) ;
+if (inv ==43) result = convertToBase43(value) ;
+if (inv ==44) result = convertToBase44(value) ;
+if (inv ==45) result = convertToBase45(value) ;
+if (inv ==46) result = convertToBase46(value) ;
+if (inv ==47) result = convertToBase47(value) ;
+if (inv ==48) result = convertToBase48(value) ;
+if (inv ==49) result = convertToBase49(value) ;
+if (inv ==50) result = convertToBase50(value) ;
+if (inv ==51) result = convertToBase51(value) ;
+if (inv ==52) result = convertToBase52(value) ;
+if (inv ==53) result = convertToBase53(value) ;
+if (inv ==54) result = convertToBase54(value) ;
+if (inv ==55) result = convertToBase55(value) ;
+if (inv ==56) result = convertToBase56(value) ;
+if (inv ==57) result = convertToBase57(value) ;
+if (inv ==58) result = convertToBase58(value) ;
+if (inv ==59) result = convertToBase59(value) ;
+if (inv ==60) result = convertToBase60(value) ;
+if (inv ==61) result = convertToBase61(value) ;
+if (inv ==62) result = convertToBase62(value) ;
+ 
+
+ document.getElementById( "result").value = result ;
+ }
+</script>
+<br><br>
+<div style="text-align:right; color:gray">
+ <img width="25%" src="https://keirinsha.github.io/tools/nnl.PNG"><br>
+  <span style="font-size:20px">© 2020 Keirinsha &nbsp;
+ </div>
+ 
+</body></html>
